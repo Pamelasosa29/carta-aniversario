@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aniversario</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(to top, #ffd6e0, #fff0f5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    text-align: center;
+  }
+  h2 {
+    font-size: 2em;
+    color: #ff4f81;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+    text-shadow: 0 0 8px #fff;
+    margin-bottom: 15px;
+    animation: bounce 1.5s infinite alternate;
+  }
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+  }
+  .envelope {
+    width: 480px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 10;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
+    margin-top: 10px;
+  }
+  .envelope:hover { transform: scale(1.08); }
+  #arrow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .arrow-text {
+    color: #ff4f81;
+    font-weight: 600;
+    font-size: 1.2em;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    margin-top: 15px;
+    animation: fadeIn 2s ease-in-out infinite alternate;
+  }
+  @keyframes fadeIn {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  .letter {
+    display: none;
+    background-color: #fff;
+    background-image:
+      linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    width: 520px;
+    max-width: 90%;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.25);
+    text-align: left;
+    animation: slideUp 1s ease;
+    position: relative;
+    z-index: 2;
+    font-family: 'Dancing Script', cursive;
+    line-height: 1.6;
+    font-size: 1.3em;
+    margin: auto;
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 24px;
+    animation: floatUp 7s linear infinite;
+    opacity: 0.9;
+    pointer-events: none;
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-120vh) scale(0.5); opacity: 0; }
+  }
+  .signature {
+    text-align: right;
+    margin-top: 30px;
+    font-style: italic;
+  }
+  .signature strong {
+    display: block;
+    text-align: right;
+    margin-right: 18px;
+  }
+  .date {
+    text-align: right;
+    color: #999;
+    font-size: 0.85em;
+    margin-bottom: 10px;
+  }
+  .btn-inicio {
+    display: none;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #ffb3c6;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1em;
+    cursor: pointer;
+    z-index: 999;
+  }
+  .btn-inicio:hover { background: #ff85a1; }
+</style>
+</head>
+<body>
+ 
+<button id="btn-inicio" class="btn-inicio" onclick="location.reload()">volver al inicio</button>
+ 
+<h2 id="instruction">Feliz Aniversario</h2>
+<div id="arrow-container">
+  <div class="arrow-text">Presiona aqui</div>
+  <span style="color: #ff85a1; font-size: 48px;">↓</span>
+</div>
+<img src="https://goo.su/KLXC"
+     alt="Sobre de carta"
+     class="envelope"
+     id="envelope"
+     onclick="openEnvelope()">
+ 
+<div class="letter" id="letter">
+  <div class="date">Ayacucho, 29 de Abril de 2026</div>
+  <p>
+    Mi amor,
+    <br><br>
+    Hace exactamente un mes empezó algo que no esperaba, pero que hoy agradezco con todo mi corazón. Sin saberlo del todo, empezó la historia más bonita de mi vida. Y aunque la distancia a veces pesa, hoy solo siento gratitud, porque tenerte, así sea lejos, es un privilegio que no cambiaría por nada.
+    <br><br>
+    Amo todo de ti. Amo tu trato, la forma en que me hablas, cómo me haces sentir importante con cada mensaje. Hay algo en ti que me hace querer ser mejor también. Me encanta cómo me escuchas, cómo estás presente aunque estés lejos, cómo logras que me sienta cerca de ti incluso cuando hay kilómetros de por medio. Amo que puedo ser yo contigo, sin miedo, sin pretender ser algo que no soy.
+    <br><br>
+    Amo tu forma de hablarme, esa manera tuya tan particular de decir las cosas que me hace sonreír sin querer. Amo cuando me escribes de la nada solo para saber cómo estoy. Amo cuando te ríes y yo puedo sentirlo aunque no estés aquí. Amo tu paciencia, tu calma, la forma en que manejas las cosas. Amo que me hagas sentir especial en los momentos más simples.
+    <br><br>
+    Cada vez que hablamos el tiempo desaparece. Podría pasarme horas contigo, riéndome, contándote cosas tontas, escuchándote hablar de lo que sea. Amo pasar tiempo contigo aunque sea a través de una pantalla, porque contigo cualquier momento se vuelve especial. No necesito nada extraordinario para ser feliz contigo, con una llamada ya me alcanza. Eres la persona con la que más quiero hablar todos los días, sin excepción, y los días que no hablamos mucho te extraño el doble.
+    <br><br>
+    La distancia es difícil, no voy a mentir. Hay momentos en que quisiera estar ahí y no puedo, y eso duele. Pero también hay algo muy bonito en lo nuestro, en saber que a pesar de todo, aquí seguimos. Que cada "buenos días" desde lejos tiene más valor que muchas cosas cercanas. Que nos elegimos todos los días aunque no sea fácil, eso me dice mucho de lo que somos.
+    <br><br>
+    Pero lo que más me llena el corazón es verte crecer. He notado los cambios en ti, y me llena de orgullo. Eres mejor de lo que eras antes, y eso no es poca cosa. Gracias por esforzarte, por mejorar, por trabajar en ti mismo. Gracias por no quedarte estancado, por seguir adelante aunque haya días difíciles. Verte así me inspira. Me hace querer seguir creciendo también. Gracias por dejarme ser parte de ese proceso y por dejarme ver esa versión tuya que no todos conocen.
+    <br><br>
+    Un mes puede parecer poco para el mundo, pero para mí es un mes lleno de conversaciones que no quiero olvidar, de risas que cruzan kilómetros, de silencios cómodos que me dicen más que mil palabras. Es un mes de aprender a quererte, de descubrir todo lo que me gusta de ti, de extrañarte y al mismo tiempo sentirme la persona más afortunada. La distancia me enseñó que cuando algo vale la pena, no importan los kilómetros ni el tiempo.
+    <br><br>
+    Ojalá pudiera explicarte bien lo que siento, pero las palabras se quedan cortas. Solo sé que cuando pienso en ti sonrío sin darme cuenta, que eres el último pensamiento que tengo antes de dormir y el primero cuando despierto. Que me alegra mucho que estés en mi vida, que la distancia no cambia nada de lo que siento, y que este primer mes es solo el comienzo de algo muy bonito.
+    <br><br>
+    Te amo más de lo que las palabras pueden decir.
+  </p>
+  <div class="signature">
+    Con todo mi amor,
+    <br>
+    <strong>Tu mujer ♥</strong>
+  </div>
+</div>
+ 
+<script>
+function openEnvelope() {
+  document.getElementById('envelope').style.display = "none";
+  document.getElementById('instruction').style.display = "none";
+  document.getElementById('arrow-container').style.display = "none";
+  document.body.style.overflow = "auto";
+  document.body.style.justifyContent = "flex-start";
+  document.body.style.paddingTop = "40px";
+  document.body.style.paddingBottom = "80px";
+  document.getElementById('letter').style.display = "block";
+  document.getElementById('btn-inicio').style.display = "block";
+  startScrollOnCursor();
+  startInfiniteHearts();
+}
+ 
+function startScrollOnCursor() {
+  let scrolling = false;
+  document.addEventListener('mousemove', function(e) {
+    if (e.clientY > window.innerHeight * 0.6) {
+      if (!scrolling) { scrolling = true; smoothScroll(); }
+    } else { scrolling = false; }
+  });
+  function smoothScroll() {
+    if (!scrolling) return;
+    window.scrollBy({ top: 2, behavior: 'instant' });
+    requestAnimationFrame(smoothScroll);
+  }
+}
+ 
+function startInfiniteHearts() {
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.textContent = "♥";
+    heart.style.color = "#ffb3c6";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (16 + Math.random() * 26) + "px";
+    heart.style.animationDuration = (6 + Math.random() * 4) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 10000);
+  }, 200);
+}
+</script>
+</body>
+</html>
